@@ -43,7 +43,7 @@
             You can also override entityID on /Login query string, or in RequestMap/htaccess.
              <SSO entityID="https://idp.example.com/idp/shibboleth">
             -->
-            <SSO entityID="idp:4443/idp/shibboleth">
+            <SSO entityID="https://idp:4443/idp/shibboleth">
               SAML2 SAML1
             </SSO>
 
