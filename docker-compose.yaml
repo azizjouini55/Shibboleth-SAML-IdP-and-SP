@@ -1,0 +1,35 @@
+
+version: "3.3"
+
+services:
+  idp:
+    build:  ./shibboleth-idp-dockerized/
+    depends_on:
+     - data
+    networks:
+     - back
+    ports:
+     - "8080:80"
+
+  data:
+    build: ./LDAP-Dockerized-CentOS/
+    networks:
+     - back
+    volumes:
+     - shibidp_ldap:/var/lib/dirsrv
+
+  sp:
+    build: ./shibboleth-sp-testapp/
+    networks:
+     - back
+    ports:
+     - "2443:443"
+     - "2080:80"
+networks:
+  back:    
+    driver: bridge
+
+ 
+volumes:
+  shibidp_ldap:  
+    driver: local
