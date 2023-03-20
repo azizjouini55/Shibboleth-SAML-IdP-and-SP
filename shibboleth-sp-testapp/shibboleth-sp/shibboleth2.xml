@@ -19,8 +19,9 @@
     file, and the https://wiki.shibboleth.net/confluence/display/SHIB2/NativeSPRequestMapHowTo topic.
     -->
 
-    <!-- The ApplicationDefaults element is where most of Shibboleth's SAML bits are defined. -->
-    <ApplicationDefaults entityID="https://sp.example.org:2443/Shibboleth.sso/Metadata"
+    <!-- The ApplicationDefaults element is where most of Shibboleth's SAML bits are defined. 
+      <ApplicationDefaults entityID="https://sp.example.org:2443/Shibboleth.sso/Metadata"-->
+    <ApplicationDefaults entityID="sp:2443/Shibboleth.sso/Metadata"
                          REMOTE_USER="eppn persistent-id targeted-id">
 
         <!--
@@ -40,8 +41,9 @@
             entityID property and adjust discoveryURL to point to discovery service.
             (Set discoveryProtocol to "WAYF" for legacy Shibboleth WAYF support.)
             You can also override entityID on /Login query string, or in RequestMap/htaccess.
+             <SSO entityID="https://idp.example.com/idp/shibboleth">
             -->
-            <SSO entityID="https://idp.example.com/idp/shibboleth">
+            <SSO entityID="idp:4443/idp/shibboleth">
               SAML2 SAML1
             </SSO>
 

@@ -17,6 +17,7 @@ services:
      - back
     volumes:
      - shibidp_ldap:/var/lib/dirsrv
+    
 
   sp:
     build: ./shibboleth-sp-testapp/
